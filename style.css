@@ -1,0 +1,36 @@
+header {
+      height: 100px;
+      background-color: #19242f;
+      color: #ff4043;
+      text-align: center;
+      padding: 10px;
+   }
+   .sidebar {
+      min-height: calc(100vh-100px-50px);
+      box-sizing: border-box;
+      float: left;
+      width: 25%;
+      padding: 15px;
+      background-color: #224264;
+      color: #ff4043;
+   }
+   .main-content {
+      min-height: calc(100vh-100px-50px);
+      box-sizing: border-box;
+      float: left;
+      width:75%;
+      padding:15px;
+      background-color: #e3d7d7;
+      color: #000;
+      
+   }
+   footer {
+      height: 50px;
+      width: 100%;
+      float: left;
+      background-color: #2d363f;
+      color: #ff4043;
+      text-align: center;
+      padding: 15px;
+      
+   }
