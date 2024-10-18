@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem Regressiva</title>
+
+    <style>
+        *{
+            margin : 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+
+        h1{
+            font-size: 50px;
+            color: #333;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+
+    <h1>10</h1>
+
+    <button>Iniciar contagem regressiva.</button>
+    
+
+
+    <script> 
+    const botton = document.querySelector('botton');
+        botton.addEventListener('click',()=>{
+            
+        })
+
+    
+    let contador = 10;
+    const regressiva = document.querySelector('h1');
+         let interval = setInterval(()=>{
+            regressiva.innerText = contador;
+            contador--;
+
+            if(contador==0){
+                clearInterval(interval);
+                
+            }
+        },1000)
+
+       
+
+
+
+    </script>
+</body>
+</html>
