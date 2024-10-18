@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <button>Clique Aqui!</button>
+
+    <p></p>
+
+    <input type="text">
+    <p></p>
+
+
+    <script>
+        
+        let numeroCliques= 0;
+        const botao = document.querySelector('button');
+        const texto= document.querySelectorAll('p');// lista de todos os p's da página.
+
+        const input = document.querySelector('input');
+
+        //função Anônima
+        // botao.onclick = function (){
+        //     console.log("Clicou!");
+        //     numeroCliques++;
+        //     texto.innerText = "O botão foi clicado: " + numeroCliques + " vezes";
+        // }
+
+        //Conseguimos usar mais de um evento
+        botao.addEventListener('click',()=>{
+            botao.onclick = function (){
+            console.log("Clicou!");
+            numeroCliques++;
+            texto[0].innerText = "O botão foi clicado: " + numeroCliques + " vezes";
+        }
+        });
+
+        input.addEventListener('keyup', (event)=>{
+
+            let textoDigitado = input.value;
+           
+
+            if (textoDigitado == "Calabresa") {
+                texto[1].innerText = "Um sabor de clássico";
+                
+            }else if(textoDigitado == "Frango com catupiry"){
+                texto[1].innerText = "Um sabor que divide opiniões";
+
+            }else{
+                texto[1].innerText = "Seu sabor é peculiar";
+            }
+
+        })
+
+
+        document.addEventListener("click" , () => {
+
+            let bgColor = 'rgb(' + Math.random() * 225 + ',' + Math.random() * 225 + ',' + Math.random() * 225 + ')';
+
+            // document.body.classLis.add(MODO-ESCURO)
+            document.body.style.backgroundColor = bgColor;
+        });
+
+    </script>
+</body>
+</html>
