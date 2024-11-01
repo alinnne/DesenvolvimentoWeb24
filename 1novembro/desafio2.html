@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lembretes</title>
+
+    <style>
+         .tema-escuro{
+            background-color: #1a1616;
+            color: #fff;
+            
+        }
+        .tema-claro{
+            background-color: #c7b8b8;
+            color: #1a1616;
+        }
+
+        .botaoTema{
+            height: auto;
+            background-color: #6c0707;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px;
+            color: aliceblue;
+           
+            
+            
+        }
+    </style>
+    
+</head>
+<body>
+        <div>
+            <button class="botaoTema">Mudar Tema</button>
+        </div> 
+
+
+
+
+        <input type="text">
+        <button class="botao">Adicionar Lembrete</button>
+
+        
+
+        <h2>Lista</h2>
+
+        <ul class="todo-list">
+            <li>tarefa</li>
+        </ul>
+
+
+
+    
+
+        
+
+
+        <script>
+            const input = document.querySelector('input');
+            const button = document.querySelector('button');
+            const lista = document.querySelector('il');
+
+
+            button.addEventListener('click',()=>{
+               
+
+                input.value=''
+
+
+                if(tarefa != ""){
+                    addToList(tarefa);
+                }
+
+            })
+
+
+
+
+            function addToList(tarefa){
+                let novaTarefa= document.createElement('li');
+                novaTarefa.textContent = tarefa;
+
+                //Botao de exclusao
+                let excluir = document.createElement('button');
+                excluir.textContent = 'excluir';
+
+
+                excluir.addEventListener('click', ()=>{
+
+                    novaTarefa.remove()
+                })
+
+                novaTarefa.appendChild(excluir);
+
+                lista.appendChild(novaTarefa);
+
+
+            }
+
+
+
+            function salvarNolocalStore(){
+
+                const tarefas = obterTodasasTarefas();
+
+                tarefas.push(tarefas)
+
+                localStorage.setItem('tarefas', JSON.stringify(tarefas))
+            }
+
+
+            function obterTodasasTarefas(){
+
+                const tarefas = localStorage.getItem('tarefas')
+                if (tarefas) {
+                    tarefas = JSON.parse(tarefas);
+                    
+                }
+                else{
+                    tarefas = [];
+                }
+            }
+
+        </script>
+
+
+
+
+   
+
+
+
+    <script>
+        const botao = document.querySelector("button");
+
+        botao.addEventListener('click',()=>{
+           if(document.body.classList.contains('tema-escuro')){
+                document.body.classList.add('tema-claro')
+                document.body.classList.remove('tema-escuro')
+                localStorage.setItem('tema', 'tema-claro')
+
+           }
+           else{
+            document.body.classList.add('tema-escuro')
+            document.body.classList.remove('tema-claro')
+            localStorage.setItem('tema', 'tema-escuro')
+           }
+
+            
+
+        })
+
+
+        document.addEventListener('DOMContentLoaded',()=>{
+            const tema = localStorage.getItem('tema');
+
+            document.body.classList.add(tema)
+
+
+        }
+    
+    )
+
+
+    //arrumar o código
+
+
+    </script>
+</body>
+</html>
